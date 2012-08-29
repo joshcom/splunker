@@ -1,5 +1,6 @@
 require "splunker/version"
+require "splunker/client"
+
 
 module Splunker
-  # Your code goes here...
 end

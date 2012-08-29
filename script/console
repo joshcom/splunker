@@ -1,6 +1,14 @@
 #!/usr/bin/env ruby
 # File: script/console
 
-require File.dirname(__FILE__) + '/../lib/splunker/cli'
 ENV["SPLUNKER_CONSOLE"] = "true"
+
+# Quick hack -- find a better way to do this.
+cli_location = if Dir.pwd.match(/script$/)
+                 File.dirname(__FILE__) + '/../lib/splunker/cli'
+               else
+                 'splunker/cli'
+               end
+require cli_location
+
 Splunker::CLI::ConsoleCLI.execute(STDOUT, ARGV)
