@@ -1,6 +1,8 @@
 require "rubygems"
 require 'pp'
 require 'irb/ext/save-history'
+require 'splunker'
+
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.splunker-history"
 
