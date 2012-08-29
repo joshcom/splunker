@@ -10,17 +10,6 @@ module Splunker
 
     Thread.current[:splunker_client] 
   end
-  
-  def self.method_missing(method,*args,&block)
-    if self.client.respond_to?(method)
-      return self.client.send(method,*args,&block)
-    end
-    super
-  end
-  
-  def self.respond_to?(method)
-    self.client.respond_to?(method) || super
-  end
 
   def self.logger
     if @logger.nil?
@@ -32,5 +21,16 @@ module Splunker
 
   def self.logger=(custom_logger)
     @logger = custom_logger
+  end
+  
+  def self.method_missing(method,*args,&block)
+    if self.client.respond_to?(method)
+      return self.client.send(method,*args,&block)
+    end
+    super
+  end
+  
+  def self.respond_to?(method)
+    self.client.respond_to?(method) || super
   end
 end
