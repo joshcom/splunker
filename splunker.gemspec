@@ -14,4 +14,8 @@ Gem::Specification.new do |gem|
   gem.name          = "splunker"
   gem.require_paths = ["lib"]
   gem.version       = Splunker::VERSION
+
+  gem.add_development_dependency "rspec", "~> 2.11"
+  gem.add_development_dependency "rake", "~> 0.9.2"
+  gem.add_development_dependency "webmock"
 end

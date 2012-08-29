@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+# File: script/console
+
+require File.dirname(__FILE__) + '/../lib/splunker/cli'
+ENV["SPLUNKER_CONSOLE"] = "true"
+Splunker::CLI::ConsoleCLI.execute(STDOUT, ARGV)
