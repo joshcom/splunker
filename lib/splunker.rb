@@ -1,6 +1,7 @@
 require 'logger'
 require "splunker/version"
 require "splunker/client"
+require "splunker/errors"
 
 module Splunker
   def self.client(options={})

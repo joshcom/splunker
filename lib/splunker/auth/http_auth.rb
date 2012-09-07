@@ -1,7 +1,7 @@
 module Splunker
   module Auth
-    class HttpAuth
-      # TODO
+    class HttpAuth < SplunkAuth
+
     end
   end
 end

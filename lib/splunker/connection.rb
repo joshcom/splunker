@@ -1,5 +1,6 @@
 module Splunker
   module Connection
-    # TODO
+    def connection
+    end
   end
 end
