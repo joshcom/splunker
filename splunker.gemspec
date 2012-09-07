@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Splunker::VERSION
 
   gem.add_dependency "opensearch"
+  gem.add_dependency "faraday"
   gem.add_development_dependency "rspec", "~> 2.11"
   gem.add_development_dependency "rake", "~> 0.9.2"
   gem.add_development_dependency "webmock"

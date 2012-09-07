@@ -1,5 +1,8 @@
 module Splunker
   module Errors
+    class ConfigurationError < RuntimeError; end
+
+    # HTTP Status Errors
     class AuthenticationFailureError < RuntimeError; end
     class FeatureDisabledError < RuntimeError; end
     class PermissionDeniedError < RuntimeError; end

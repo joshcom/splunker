@@ -17,9 +17,9 @@ module Splunker
       request(:get, resource, parameters)
     end
 
-    def post(resource, body={})
-      request(:post, resource, nil, body)
-    end
+    #def post(resource, body={})
+    #  request(:post, resource, nil, body)
+    #end
 
     ###
     # put/delete can come as needed.
@@ -27,6 +27,7 @@ module Splunker
 
     def request(method, resource, parameters={}, body={})
       authenticate unless authenticated?
+      self.connection.send(method, resource)
     end
 
     def self.included(base)

@@ -3,11 +3,16 @@ module Splunker
     class SplunkAuth
       include Splunker::Request
 
-      attr_accessor :configuration
+      attr_accessor :client
 
-      def initialize(configuration)
-        self.configuration = configuration
+      def initialize(client)
+        self.client = client
       end
+
+      def configuration
+        self.client.configuration
+      end
+
     end
   end
 end
