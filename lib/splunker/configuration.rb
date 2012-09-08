@@ -41,6 +41,7 @@ module Splunker
       self.ssl_verify = DEFAULT_SSL_VERIFY
       self.auth_mode = nil
       @username = @password = nil
+      self.request_handler.reset unless self.request_handler.nil?
     end
   end
 end
