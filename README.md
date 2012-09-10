@@ -1,6 +1,6 @@
-# Splunker
+# Splunker 
 
-TODO: Write a gem description
+A Ruby client for the [RESTful Splunk API](http://dev.splunk.com/view/rest-api-overview/SP-CAAADP8)
 
 ## Installation
 
