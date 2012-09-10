@@ -1,4 +1,5 @@
 require 'faraday'
+require 'splunker/faraday_middleware'
 
 module Splunker
   module Connection
@@ -20,6 +21,7 @@ module Splunker
         c.use Faraday::Request::UrlEncoded  
         c.use Faraday::Response::Logger
         c.use Faraday::Adapter::NetHttp
+        c.use Splunker::FaradayMiddleware
       end
     end
   end

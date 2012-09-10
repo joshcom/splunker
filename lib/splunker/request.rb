@@ -28,7 +28,7 @@ module Splunker
     def request(method, resource, parameters={}, body={})
       authenticate unless authenticated?
       authenticate_connection(self.connection)
-      self.connection.send(method, resource)
+      self.connection.send(method, resource).body
     end
 
     def self.included(base)

@@ -18,8 +18,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Models are on there way, but you can access resources by directly invoking the
+HTTP helper methods.
 
+# Basic Auth
+    c = Splunker.client(:auth_mode => :http_auth, :username => "MYUSERNAME", 
+      :password => "MYPASSWORD", :endpoint => "https://splunk.mysite.com")
+    # Returns Nokogiri::XML::Document 
+    r = c.get("/servicesNS/joshua/search/saved/searches/MySearch/history")
+    # Process away
+    r.xpath("...")
+    
 ## Contributing
 
 1. Fork it
