@@ -25,6 +25,8 @@ HTTP helper methods.
     c = Splunker.client(:auth_mode => :http_auth, :username => "MYUSERNAME", 
       :password => "MYPASSWORD", :endpoint => "https://splunk.mysite.com")
     # Returns Nokogiri::XML::Document 
+    # Note that /servicesNS/YOUR_USERNAME/YOUR_APPNAME is prepended automatically
+    # to your resource.
     r = c.get("/saved/searches/MySearch/history")
     # Process away
     r.xpath("...")
