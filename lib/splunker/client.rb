@@ -2,9 +2,21 @@ require 'splunker/configuration'
 require 'splunker/auth'
 
 module Splunker
+  # The Splunk API client.
+  # Methods include get, post, put, and delete HTTP helpers:
+  #   c.get("...")
+  # See Splunker::Request for more details.
   class Client
     include Configuration
 
+    # Creates a new Splunker client instance.
+    # Options are:
+    # * :username   => Required. The username to make requests on behalf of
+    # * :password   => Required. The password to authenticate with
+    # * :auth_mode  => Required.  The authentication method to use.  :http_auth or :token_auth.
+    # * :endpoint   => ("https://localhost:8089") The host of the Splunk API
+    # * :ssl_verify => (true) If false, the SSL cert fro the Splunk server will not be verified.
+    # * :app        => ("search")
     def initialize(options={})
       self.reset
 

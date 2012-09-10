@@ -7,6 +7,8 @@ module Splunker
       @connection = nil
     end
 
+    # Returns an existing, or new, Faraday instance.
+    # If a new connection is desired, #reset must be called.
     def connection
       if self.configuration[:endpoint].nil?
         raise ConfigurationError, "No endpoint set!"

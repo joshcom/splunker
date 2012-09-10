@@ -23,6 +23,14 @@ module Splunker
       500 => InternalServerError 
     } 
 
+    # Parameters:
+    # * http_status => The integer representing the HTTP status
+    # * body        => The response body.  Will be passed to the 
+    #                  error instance when raised, for additional
+    #                  information.
+    # Returns nil if no exception will be raised.
+    # Raises an error mapped to http_status in STATUS_CODE_TO_ERROR_MAP,
+    # or ClientError if status is not 2xx but no mapped error exists.
     def self.raise_error_for_status!(http_status, body)
       return nil if (200..299).include?(http_status)
 

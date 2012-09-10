@@ -1,5 +1,6 @@
 module Splunker
   module Auth
+    # Wraps Splunk API requests with basic authentication
     class HttpAuth < SplunkAuth
       def authenticate_connection(conn)
         return if self.configured?
