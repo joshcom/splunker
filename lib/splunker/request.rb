@@ -53,7 +53,17 @@ module Splunker
     def request(method, resource, parameters={}, body={})
       authenticate unless authenticated?
       authenticate_connection(self.connection)
-      self.connection.send(method, resource).body
+      final_resource = resource_builder(resource)
+      self.connection.send(method, final_resource).body
+    end
+
+    # Returns a string representing the final resource path
+    def resource_builder(resource)
+      assemble_path("/servicesNS/#{configuration[:username]}/#{configuration[:app]}/#{resource}")
+    end
+
+    def assemble_path(path_str)
+      path_str.gsub(/\/+/,"/")
     end
 
     def self.included(base)
