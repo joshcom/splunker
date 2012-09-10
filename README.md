@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-Models are on there way, but you can access resources by directly invoking the
+Models are on the way, but you can access resources by directly invoking the
 HTTP helper methods.
 
 # Basic Auth
