@@ -7,6 +7,7 @@ module Splunker
   # Note that any class that mixes in the Request module will also mix in
   # Splunker::Connection automatically (see Splunker::Request.included)
   module Request
+    require 'addressable/uri'
 
     # Authenticates the user (not the request) identified by
     # :username and :password in the configuration.
@@ -33,9 +34,9 @@ module Splunker
       request(:get, resource, parameters)
     end
 
-    #def post(resource, body={})
-    #  request(:post, resource, nil, body)
-    #end
+    def post(resource, body={})
+      request(:post, resource, nil, body)
+    end
 
     ###
     # put/delete can come as needed.
@@ -53,13 +54,24 @@ module Splunker
     def request(method, resource, parameters={}, body={})
       authenticate unless authenticated?
       authenticate_connection(self.connection)
-      final_resource = resource_builder(resource)
-      self.connection.send(method, final_resource).body
+      final_resource = resource_builder(resource, parameters)
+      self.connection.send(method, final_resource, body).body
     end
 
     # Returns a string representing the final resource path
-    def resource_builder(resource)
-      assemble_path("/servicesNS/#{configuration[:username]}/#{configuration[:app]}/#{resource}")
+    def resource_builder(resource, parameters={})
+      u = Addressable::URI.new
+      u.path = assemble_path("/servicesNS/#{configuration[:username]}/#{configuration[:app]}/#{resource}")
+      unless parameters.nil? || parameters.empty?
+        # Let's remap and cast everything to a string.
+        # Addressable doesn't handle values like true well.
+        final_parameters = {}
+        parameters.map do |key, value|
+          final_parameters[key] = "#{value}"
+        end
+        u.query_values = final_parameters 
+      end
+      u.to_s
     end
 
     def assemble_path(path_str)

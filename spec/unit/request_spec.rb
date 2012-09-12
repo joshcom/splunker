@@ -9,5 +9,9 @@ describe Splunker::Request do
     it "should assemble the path from the username and app name" do
       client.resource_builder("saved/searches").should eq("/servicesNS/tido/search/saved/searches")
     end
+    it "should assemble the path with query parameters" do
+      client.resource_builder("saved/searches", :parameter1 => "me", 
+                             :parameter2 => true).should eq("/servicesNS/tido/search/saved/searches?parameter1=me&parameter2=true")
+    end
   end
 end
