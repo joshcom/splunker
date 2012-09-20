@@ -25,6 +25,7 @@ HTTP helper methods.
 
 # Console
 To make playing around with the API client a smooth(er) experience, you can fire up our IRB wrapper by:
+
     $ bundle exec script/console 
     Enabling console mode for local gem
     Loading splunker gem...
