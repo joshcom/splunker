@@ -6,7 +6,7 @@ module Splunker
     end
 
     def on_complete(env)
-      env[:body] = Nokogiri::XML(env[:body])
+      env[:body] = Nokogiri::Slop(env[:body])
       Splunker.logger.debug("Response Body: #{env[:body]}")
       Splunker::Errors.raise_error_for_status!(env[:status], env[:body])
       Splunker.logger.debug "Request successful!"
