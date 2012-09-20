@@ -50,7 +50,7 @@ The API client raises an exception when a non-2XX [response codes](http://docs.s
   <thead>
     <tr>
       <th>HTTP Code</th>
-      <th>Spark API Error Code</th>
+      <th>Splunk API Error Code</th>
     </tr>
   </thead>
   <tbody>
