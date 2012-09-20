@@ -23,6 +23,14 @@ Or install it yourself as:
 Models are on the way, but you can access resources by directly invoking the
 HTTP helper methods.
 
+# Console
+To make playing around with the API client a smooth(er) experience, you can fire up our IRB wrapper by:
+    $ bundle exec script/console 
+    Enabling console mode for local gem
+    Loading splunker gem...
+    Splunker:001:0> c = Splunker.client(:auth_mode => :http_auth)
+    #<Splunker::Client:0x007f9782b0d238 @endpoint="https://localhost:8089", @app="search", @ssl_verify=true, @request_handler=#<Splunker::Auth::HttpAuth:0x007f9782b0cf68 @client=#<Splunker::Client:0x007f9782b0d238 ...>>, @password=nil, @username=nil>
+
 # Basic Auth
     c = Splunker.client(:auth_mode => :http_auth, :username => "MYUSERNAME", 
       :password => "MYPASSWORD", :endpoint => "https://splunk.mysite.com")
@@ -44,3 +52,4 @@ HTTP helper methods.
 # TODO
 * Token Auth
 * Resource creation handling, blocking & polling options, with a timeout.
+* Build console into gem (bin/)
