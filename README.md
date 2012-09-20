@@ -2,6 +2,8 @@
 
 A Ruby client for the [RESTful Splunk API](http://dev.splunk.com/view/rest-api-overview/SP-CAAADP8)
 
+Consider this largely functional but alpha.  See the TODO list below.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -38,3 +40,7 @@ HTTP helper methods.
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+# TODO
+* Token Auth
+* Resource creation handling, blocking & polling options, with a timeout.
