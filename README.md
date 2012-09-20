@@ -31,6 +31,53 @@ HTTP helper methods.
     # Process away
     r.xpath("...")
     
+## Exceptions
+
+The API client raises an exception when a non-2XX [response codes](http://docs.splunk.com/Documentation/Splunk/latest/RESTAPI/RESTusing#Response_status) is received.
+
+<table>
+  <thead>
+    <tr>
+      <th>HTTP Code</th>
+      <th>Spark API Error Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>401</td>
+      <td>Splunker::Errors::AuthenticationFailureError</td>
+    </tr>
+    <tr>
+      <td>402</td>
+      <td>Splunker::Errors::FeatureDisabledError</td>
+    </tr>
+    <tr>
+      <td>403</td>
+      <td>Splunker::Errors::PermissionDeniedError</td>
+    </tr>
+    <tr>
+      <td>404</td>
+      <td>Splunker::Errors::ObjectDoesNotExistError</td>
+    </tr>
+    <tr>
+      <td>405</td>
+      <td>Splunker::Errors::MethodNotAllowedError</td>
+    </tr>
+    <tr>
+      <td>409</td>
+      <td>Splunker::Errors::InvalidOperationError</td>
+    </tr>
+    <tr>
+      <td>500</td>
+      <td>Splunker::Errors::InternalServerError </td>
+    </tr>
+    <tr>
+      <td>Any other non-2xx response</td>
+      <td>Splunker::Errors::ClientError</td>
+    </tr>
+  </tbody>
+</table>
+
 ## Contributing
 
 1. Fork it
