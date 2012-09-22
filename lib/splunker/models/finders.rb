@@ -1,4 +1,4 @@
-module Models
+module Splunker::Models
   module Finders
     module ClassMethods
       def where(options={})

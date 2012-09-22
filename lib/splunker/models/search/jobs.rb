@@ -1,6 +1,6 @@
-module Splunker
-  module Models
-    class Search::Jobs < Resource
+module Splunker::Models
+  module Search
+    class Jobs < Splunker::Models::Resource
       # http://docs.splunk.com/Documentation/Splunk/4.3.3/RESTAPI/RESTsearch#search.2Fjobs
       # Jobs are a data structure in themselves
       # Jobs have subresources for:

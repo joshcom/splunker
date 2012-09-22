@@ -2,6 +2,7 @@ require 'logger'
 require "splunker/version"
 require "splunker/client"
 require "splunker/errors"
+require "splunker/models"
 
 # The parent Splunker module can directly invoke any method invokable by the 
 # client returned in Splunker.client, so long as Splunker.client has been
