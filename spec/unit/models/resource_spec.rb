@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe Splunker::Models::XmlProcessing do
+describe Splunker::Models::Resource do
   include Splunker::Models
 
   let(:model) do
-    xml = Nokogiri::Slop(fixture("saved_search.xml"))
+    xml = Nokogiri::XML(fixture("saved_search.xml"))
     Splunker::Models::Resource.new(xml)
   end
 
@@ -13,7 +13,7 @@ describe Splunker::Models::XmlProcessing do
   end
 
   it "should act on attribute methods" do
-    model.title.should eq("savedsearch")
+    model.title.should eq("MySavedSearch")
   end
 
   it "should write to attributes through assignment methods" do

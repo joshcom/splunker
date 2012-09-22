@@ -2,16 +2,13 @@ module Splunker
   module Models
     require 'cgi'
     require 'splunker/models/finders'
-    require 'splunker/models/xml_processing'
+    require 'splunker/models/xml_processor'
 
     class Resource 
 
       attr_accessor :attributes
 
-      TOP_ATTRIBUTE_NODES = ["id","title","updated"]
-
       include Finders
-      include XmlProcessing
 
       def self.service_path(path)
         @service_path = path
@@ -22,15 +19,7 @@ module Splunker
       end
 
       def initialize(xml_doc)
-        node = top_node(xml_doc)
-        self.attributes = {}
-
-        # Grab top level entries, dynimically add methods
-        # Create attributes for all top level nodes
-        node.children.each do |node|
-          next unless TOP_ATTRIBUTE_NODES.include?(node.name)
-          write_attribute(node.name, node.text)
-        end
+        self.attributes = XmlProcessor.hashify(xml_doc)
       end
 
       def method_missing(method_symbol, *arguments)
