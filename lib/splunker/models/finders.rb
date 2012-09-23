@@ -1,7 +1,8 @@
-module Models
+module Splunker::Models
   module Finders
     module ClassMethods
       def where(options={})
+        raise NotImplemented, "Not yet implemented!"
         find(:all, options)
       end
 
@@ -19,12 +20,13 @@ module Models
       end
 
       def find_all(options)
+        raise NotImplemented, "Not yet implemented!"
         self.client.get @service_path, options
       end
 
-      def find_by_id(object_id, options)
-        object_path = assemble_path("#{@service_path}/#{escape_object_id(id)}")
-        self.client.get object_path
+      def find_by_id(object_id, options={})
+        object_path = "#{@service_path}/#{escape_object_id(object_id)}"
+        self.new(self.client.get(object_path))
       end
     end
 

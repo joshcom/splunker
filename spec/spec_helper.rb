@@ -11,7 +11,7 @@ RSpec.configure do |config|
 end
 
 def fixture(file)
-  File.new( File.expand_path('../fixtures', __FILE__) + "/" + file)
+  File.new( File.expand_path('../fixtures', __FILE__) + "/" + file).read
 end
 
 def basic_auth_resource_builder(client, resource)

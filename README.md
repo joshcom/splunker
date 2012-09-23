@@ -101,3 +101,7 @@ The API client raises an exception when a non-2XX [response codes](http://docs.s
 * Token Auth
 * Resource creation handling, blocking & polling options, with a timeout.
 * Build console into gem (bin/)
+* Search all models in addition to getting by ID
+* Support search paramters (or, validate support)
+* Strat for acknowledge, dispatch, history, etc.
+* XML parsing -- detect nodes with children, detect types?

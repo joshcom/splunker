@@ -1,0 +1,267 @@
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/"
+      xmlns:s="http://dev.splunk.com/ns/rest">
+  <title>savedsearch</title>
+  <id>https://localhost:8089/servicesNS/admin/search/saved/searches</id>
+  <updated>2011-07-13T11:57:54-07:00</updated>
+  <generator version="102824"/>
+  <author>
+    <name>Splunk</name>
+  </author>
+  <link href="/servicesNS/admin/search/saved/searches/_new" rel="create"/>
+  <link href="/servicesNS/admin/search/saved/searches/_reload" rel="_reload"/>
+  <!-- opensearch nodes elided for brevity. -->
+  <s:messages/>
+  <entry>
+    <title>MySavedSearch</title>
+    <id>https://localhost:8089/servicesNS/admin/search/saved/searches/MySavedSearch</id>
+    <updated>2011-07-13T11:57:54-07:00</updated>
+    <link href="/servicesNS/admin/search/saved/searches/MySavedSearch" rel="alternate"/>
+    <author>
+      <name>admin</name>
+    </author>
+    <link href="/servicesNS/admin/search/saved/searches/MySavedSearch" rel="list"/>
+    <link href="/servicesNS/admin/search/saved/searches/MySavedSearch/_reload" rel="_reload"/>
+    <link href="/servicesNS/admin/search/saved/searches/MySavedSearch" rel="edit"/>
+    <link href="/servicesNS/admin/search/saved/searches/MySavedSearch" rel="remove"/>
+    <link href="/servicesNS/admin/search/saved/searches/MySavedSearch/move" rel="move"/>
+    <link href="/servicesNS/admin/search/saved/searches/MySavedSearch/disable" rel="disable"/>
+    <link href="/servicesNS/admin/search/saved/searches/MySavedSearch/dispatch" rel="dispatch"/>
+    <link href="/servicesNS/admin/search/saved/searches/MySavedSearch/history" rel="history"/>
+    <content type="text/xml">
+      <s:dict>
+        <s:key name="action.email">0</s:key>
+        <s:key name="action.email.auth_password"/>
+        <s:key name="action.email.auth_username"/>
+        <s:key name="action.email.bcc"/>
+        <s:key name="action.email.cc"/>
+        <s:key name="action.email.command">
+      <![CDATA[$action.email.preprocess_results{default=""}$
+     | sendemail "server=$action.email.mailserver{default=localhost}$" "use_ssl=$action.email.use_ssl{default=false}$"
+      "use_tls=$action.email.use_tls{default=false}$" "to=$action.email.to$" "cc=$action.email.cc$"
+      "bcc=$action.email.bcc$" "from=$action.email.from{default=splunk@localhost}$" "subject=$action.email.subject{recurse=yes}$"
+      "format=$action.email.format{default=csv}$" "sssummary=Saved Search [$name$]: $counttype$($results.count$)"
+      "sslink=$results.url$" "ssquery=$search$" "ssname=$name$" "inline=$action.email.inline{default=False}$"
+      "sendresults=$action.email.sendresults{default=False}$" "sendpdf=$action.email.sendpdf{default=False}$"
+      "pdfview=$action.email.pdfview$" "searchid=$search_id$" "graceful=$graceful{default=True}$"
+      maxinputs="$action.email.maxresults{default=10000}$" maxtime="$action.email.maxtime{default=5m}$"]]>
+        </s:key>
+        <s:key name="action.email.format">html</s:key>
+        <s:key name="action.email.from">splunk</s:key>
+        <s:key name="action.email.hostname"/>
+        <s:key name="action.email.inline">0</s:key>
+        <s:key name="action.email.mailserver">localhost</s:key>
+        <s:key name="action.email.maxresults">10000</s:key>
+        <s:key name="action.email.maxtime">5m</s:key>
+        <s:key name="action.email.preprocess_results"/>
+        <s:key name="action.email.reportPaperOrientation">portrait</s:key>
+        <s:key name="action.email.reportPaperSize">letter</s:key>
+        <s:key name="action.email.reportServerEnabled">0</s:key>
+        <s:key name="action.email.reportServerURL"/>
+        <s:key name="action.email.sendpdf">0</s:key>
+        <s:key name="action.email.sendresults">0</s:key>
+        <s:key name="action.email.subject">Splunk Alert: $name$</s:key>
+        <s:key name="action.email.to"/>
+        <s:key name="action.email.track_alert">1</s:key>
+        <s:key name="action.email.ttl">86400</s:key>
+        <s:key name="action.email.use_ssl">0</s:key>
+        <s:key name="action.email.use_tls">0</s:key>
+        <s:key name="action.populate_lookup">0</s:key>
+        <s:key name="action.populate_lookup.command">
+          copyresults dest="$action.populate_lookup.dest$"  sid="$search_id$"
+        </s:key>
+        <s:key name="action.populate_lookup.hostname"/>
+        <s:key name="action.populate_lookup.maxresults">10000</s:key>
+        <s:key name="action.populate_lookup.maxtime">5m</s:key>
+        <s:key name="action.populate_lookup.track_alert">0</s:key>
+        <s:key name="action.populate_lookup.ttl">120</s:key>
+        <s:key name="action.rss">0</s:key>
+        <s:key name="action.rss.command">
+          createrss "path=$name$.xml" "name=$name$" "link=$results.url$"
+          "descr=Alert trigger: $name$, results.count=$results.count$ " "count=30"
+          "graceful=$graceful{default=1}$" maxtime="$action.rss.maxtime{default=1m}$"
+        </s:key>
+        <s:key name="action.rss.hostname"/>
+        <s:key name="action.rss.maxresults">10000</s:key>
+        <s:key name="action.rss.maxtime">1m</s:key>
+        <s:key name="action.rss.track_alert">0</s:key>
+        <s:key name="action.rss.ttl">86400</s:key>
+        <s:key name="action.script">0</s:key>
+        <s:key name="action.script.command">runshellscript "$action.script.filename$"
+          "$results.count$" "$search$" "$search$" "$name$"
+          "Saved Search [$name$] $counttype$($results.count$)" "$results.url$"
+          "$deprecated_arg$" "$search_id$"
+          maxtime="$action.script.maxtime{default=5m}$"
+        </s:key>
+        <s:key name="action.script.hostname"/>
+        <s:key name="action.script.maxresults">10000</s:key>
+        <s:key name="action.script.maxtime">5m</s:key>
+        <s:key name="action.script.track_alert">1</s:key>
+        <s:key name="action.script.ttl">600</s:key>
+        <s:key name="action.summary_index">0</s:key>
+        <s:key name="action.summary_index._name">summary</s:key>
+        <s:key name="action.summary_index.command">
+          <![CDATA[summaryindex spool=t uselb=t addtime=t index="$action.summary_index._name{required=yes}$"
+          file="$name$_$#random$.stash_new" name="$name$"
+          marker="$action.summary_index*{format=$KEY=\\\"$VAL\\\",
+            key_regex="action.summary_index.(?!(?:command|inline|maxresults|maxtime|ttl|track_alert|(?:_.*))$)(.*)"}$"]]>
+        </s:key>
+        <s:key name="action.summary_index.hostname"/>
+        <s:key name="action.summary_index.inline">1</s:key>
+        <s:key name="action.summary_index.maxresults">10000</s:key>
+        <s:key name="action.summary_index.maxtime">5m</s:key>
+        <s:key name="action.summary_index.track_alert">0</s:key>
+        <s:key name="action.summary_index.ttl">120</s:key>
+        <s:key name="alert.digest_mode">1</s:key>
+        <s:key name="alert.expires">24h</s:key>
+        <s:key name="alert.severity">3</s:key>
+        <s:key name="alert.suppress"/>
+        <s:key name="alert.suppress.period"/>
+        <s:key name="alert.track">auto</s:key>
+        <s:key name="alert_comparator"/>
+        <s:key name="alert_condition"/>
+        <s:key name="alert_threshold"/>
+        <s:key name="alert_type">always</s:key>
+        <s:key name="cron_schedule"/>
+        <s:key name="description"/>
+        <s:key name="disabled">0</s:key>
+        <s:key name="dispatch.buckets">0</s:key>
+        <s:key name="dispatch.earliest_time"/>
+        <s:key name="dispatch.latest_time"/>
+        <s:key name="dispatch.lookups">1</s:key>
+        <s:key name="dispatch.max_count">500000</s:key>
+        <s:key name="dispatch.max_time">0</s:key>
+        <s:key name="dispatch.reduce_freq">10</s:key>
+        <s:key name="dispatch.spawn_process">1</s:key>
+        <s:key name="dispatch.time_format">%FT%T.%Q%:z</s:key>
+        <s:key name="dispatch.ttl">2p</s:key>
+        <s:key name="displayview"/>
+        <!-- eai:acl nodes elided for brevity. -->
+        <s:key name="eai:attributes">
+          <s:dict>
+            <s:key name="optionalFields">
+              <s:list>
+                <s:item>action.email</s:item>
+                <s:item>action.email.auth_password</s:item>
+                <s:item>action.email.auth_username</s:item>
+                <s:item>action.email.bcc</s:item>
+                <s:item>action.email.cc</s:item>
+                <s:item>action.email.command</s:item>
+                <s:item>action.email.format</s:item>
+                <s:item>action.email.from</s:item>
+                <s:item>action.email.hostname</s:item>
+                <s:item>action.email.inline</s:item>
+                <s:item>action.email.mailserver</s:item>
+                <s:item>action.email.maxresults</s:item>
+                <s:item>action.email.maxtime</s:item>
+                <s:item>action.email.preprocess_results</s:item>
+                <s:item>action.email.reportPaperOrientation</s:item>
+                <s:item>action.email.reportPaperSize</s:item>
+                <s:item>action.email.reportServerEnabled</s:item>
+                <s:item>action.email.reportServerURL</s:item>
+                <s:item>action.email.sendpdf</s:item>
+                <s:item>action.email.sendresults</s:item>
+                <s:item>action.email.subject</s:item>
+                <s:item>action.email.to</s:item>
+                <s:item>action.email.track_alert</s:item>
+                <s:item>action.email.ttl</s:item>
+                <s:item>action.email.use_ssl</s:item>
+                <s:item>action.email.use_tls</s:item>
+                <s:item>action.populate_lookup</s:item>
+                <s:item>action.populate_lookup.command</s:item>
+                <s:item>action.populate_lookup.hostname</s:item>
+                <s:item>action.populate_lookup.maxresults</s:item>
+                <s:item>action.populate_lookup.maxtime</s:item>
+                <s:item>action.populate_lookup.track_alert</s:item>
+                <s:item>action.populate_lookup.ttl</s:item>
+                <s:item>action.rss</s:item>
+                <s:item>action.rss.command</s:item>
+                <s:item>action.rss.hostname</s:item>
+                <s:item>action.rss.maxresults</s:item>
+                <s:item>action.rss.maxtime</s:item>
+                <s:item>action.rss.track_alert</s:item>
+                <s:item>action.rss.ttl</s:item>
+                <s:item>action.script</s:item>
+                <s:item>action.script.command</s:item>
+                <s:item>action.script.hostname</s:item>
+                <s:item>action.script.maxresults</s:item>
+                <s:item>action.script.maxtime</s:item>
+                <s:item>action.script.track_alert</s:item>
+                <s:item>action.script.ttl</s:item>
+                <s:item>action.summary_index</s:item>
+                <s:item>action.summary_index._name</s:item>
+                <s:item>action.summary_index.command</s:item>
+                <s:item>action.summary_index.hostname</s:item>
+                <s:item>action.summary_index.inline</s:item>
+                <s:item>action.summary_index.maxresults</s:item>
+                <s:item>action.summary_index.maxtime</s:item>
+                <s:item>action.summary_index.track_alert</s:item>
+                <s:item>action.summary_index.ttl</s:item>
+                <s:item>actions</s:item>
+                <s:item>alert.digest_mode</s:item>
+                <s:item>alert.expires</s:item>
+                <s:item>alert.severity</s:item>
+                <s:item>alert.suppress</s:item>
+                <s:item>alert.suppress.period</s:item>
+                <s:item>alert.track</s:item>
+                <s:item>alert_comparator</s:item>
+                <s:item>alert_condition</s:item>
+                <s:item>alert_threshold</s:item>
+                <s:item>alert_type</s:item>
+                <s:item>cron_schedule</s:item>
+                <s:item>description</s:item>
+                <s:item>disabled</s:item>
+                <s:item>dispatch.buckets</s:item>
+                <s:item>dispatch.earliest_time</s:item>
+                <s:item>dispatch.latest_time</s:item>
+                <s:item>dispatch.lookups</s:item>
+                <s:item>dispatch.max_count</s:item>
+                <s:item>dispatch.max_time</s:item>
+                <s:item>dispatch.reduce_freq</s:item>
+                <s:item>dispatch.spawn_process</s:item>
+                <s:item>dispatch.time_format</s:item>
+                <s:item>dispatch.ttl</s:item>
+                <s:item>displayview</s:item>
+                <s:item>is_scheduled</s:item>
+                <s:item>is_visible</s:item>
+                <s:item>max_concurrent</s:item>
+                <s:item>next_scheduled_time</s:item>
+                <s:item>qualifiedSearch</s:item>
+                <s:item>realtime_schedule</s:item>
+                <s:item>request.ui_dispatch_app</s:item>
+                <s:item>request.ui_dispatch_view</s:item>
+                <s:item>restart_on_searchpeer_add</s:item>
+                <s:item>run_on_startup</s:item>
+                <s:item>vsid</s:item>
+              </s:list>
+            </s:key>
+            <s:key name="requiredFields">
+              <s:list>
+                <s:item>search</s:item>
+              </s:list>
+            </s:key>
+            <s:key name="wildcardFields">
+              <s:list>
+                <s:item>action\..*</s:item>
+                <s:item>args\..*</s:item>
+                <s:item>dispatch\..*</s:item>
+              </s:list>
+            </s:key>
+          </s:dict>
+        </s:key>
+        <s:key name="is_scheduled">0</s:key>
+        <s:key name="is_visible">1</s:key>
+        <s:key name="max_concurrent">1</s:key>
+        <s:key name="next_scheduled_time"/>
+        <s:key name="qualifiedSearch">search  index</s:key>
+        <s:key name="realtime_schedule">1</s:key>
+        <s:key name="request.ui_dispatch_app"/>
+        <s:key name="request.ui_dispatch_view"/>
+        <s:key name="restart_on_searchpeer_add">1</s:key>
+        <s:key name="run_on_startup">0</s:key>
+        <s:key name="search">index</s:key>
+        <s:key name="vsid"/>
+      </s:dict>
+    </content>
+  </entry>
+</feed>
