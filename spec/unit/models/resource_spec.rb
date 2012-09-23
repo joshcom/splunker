@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe Splunker::Models::Resource do
-  include Splunker::Models
 
   let(:model) do
     xml = Nokogiri::XML(fixture("saved_search.xml"))

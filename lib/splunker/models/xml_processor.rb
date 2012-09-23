@@ -44,12 +44,16 @@ module Splunker
       end
 
       def top_node(xml_doc)
-        begin
-          if xml_doc.xpath("/xmlns:feed/xmlns:entry/*").size > 0
-            return xml_doc.xpath("/xmlns:feed/xmlns:entry")
+        # Handle the various types of XML structure
+        ["/xmlns:feed/xmlns:entry",
+         "/xmlns:entry"].each do |path|
+          begin
+            if xml_doc.xpath("#{path}/*").size > 0
+              return xml_doc.xpath(path)
+            end
+          rescue Nokogiri::XML::XPath::SyntaxError => e
+            # Ignore...
           end
-        rescue Nokogiri::XML::XPath::SyntaxError => e
-          # Ignore...
         end
 
         xml_doc
