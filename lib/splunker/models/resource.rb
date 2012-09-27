@@ -3,6 +3,7 @@ module Splunker
     require 'cgi'
     require 'splunker/models/finders'
     require 'splunker/models/xml_processor'
+    require 'splunker/models/subresource'
 
     class Resource 
 
@@ -12,6 +13,10 @@ module Splunker
 
       def self.service_path(path)
         @service_path = path
+      end
+
+      def self.my_service_path
+        @service_path
       end
 
       def self.client

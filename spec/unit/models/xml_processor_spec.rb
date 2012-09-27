@@ -7,7 +7,11 @@ describe Splunker::Models::XmlProcessor do
   end
 
   let(:xml) do
-    Nokogiri::Slop(fixture("saved_search.xml"))
+    Nokogiri::XML(fixture("saved_search.xml"))
+  end
+
+  let(:results_xml) do
+    Nokogiri::XML(fixture("search_results_from_job.xml"))
   end
 
   context "hashify xml" do
@@ -41,6 +45,20 @@ describe Splunker::Models::XmlProcessor do
       entry = Nokogiri::XML(xml.xpath("//xmlns:author").to_xml)
       node = processor.top_node(entry)
       node.text.strip.should eq("Splunk")
+    end
+  end
+
+  context "process results xml" do
+    let(:results) do
+      processor.hashify(results_xml)
+    end
+
+    it "should load meta as a top level attribute" do
+      results["meta"].should_not be_nil
+    end
+
+    it "should load results, with key-value pairs" do
+      results["results"].first["avg(time_total)"].should eq("626.604469")
     end
   end
 

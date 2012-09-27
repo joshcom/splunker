@@ -25,6 +25,25 @@ module Splunker
         hash
       end
 
+      def process_results(hash, node)
+        # TODO: Process meta. Ugh.
+        hash["meta"] = Array(node.xpath("./meta").children)
+
+        # Process results, yay.
+        hash["results"] = []
+
+        node.xpath("./result").each do |r|
+          result = {}
+          r.xpath("./field").each do |f|
+            next unless f.attributes.include?("k")
+            result[f.attribute("k").value] = f.text.strip
+          end
+          hash["results"] << result
+        end
+
+        hash
+      end
+
       def process_text(hash, node)
         hash
       end

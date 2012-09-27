@@ -19,14 +19,14 @@ module Splunker::Models
           end
       end
 
-      def find_all(options)
+      def find_all(options={})
         raise NotImplemented, "Not yet implemented!"
         self.client.get @service_path, options
       end
 
       def find_by_id(object_id, options={})
         object_path = "#{@service_path}/#{escape_object_id(object_id)}"
-        self.new(self.client.get(object_path))
+        self.new(self.client.get(object_path, options))
       end
     end
 
