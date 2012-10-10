@@ -1,0 +1,94 @@
+<?xml-stylesheet type="text/xml" href="/static/atom.xsl"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:s="http://dev.splunk.com/ns/rest" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">
+  <title>50msclub</title>
+  <id>https://localhost:8089/servicesNS/wade/search/saved/searches</id>
+  <updated>2012-10-10T14:19:50-05:00</updated>
+  <generator version="128297"/>
+  <author>
+    <name>Splunk</name>
+  </author>
+  <link href="/servicesNS/wade/search/saved/searches/_new" rel="create"/>
+  <link href="/servicesNS/wade/search/saved/searches/_reload" rel="_reload"/>
+  <opensearch:totalResults>3</opensearch:totalResults>
+  <opensearch:itemsPerPage>30</opensearch:itemsPerPage>
+  <opensearch:startIndex>0</opensearch:startIndex>
+  <s:messages/>
+  <entry>
+    <title>scheduler__wade__search__50msclub_at_1349896500_9be96fb18ff7bb9a</title>
+    <id>https://localhost:8089/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896500_9be96fb18ff7bb9a</id>
+    <updated>2012-10-10T14:15:40-05:00</updated>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896500_9be96fb18ff7bb9a" rel="alternate"/>
+    <author>
+      <name>wade</name>
+    </author>
+    <published>2012-10-10T14:15:00-05:00</published>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896500_9be96fb18ff7bb9a" rel="list"/>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896500_9be96fb18ff7bb9a/_reload" rel="_reload"/>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896500_9be96fb18ff7bb9a" rel="edit"/>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896500_9be96fb18ff7bb9a" rel="remove"/>
+    <content type="text/xml">
+      <s:dict>
+        <s:key name="eai:acl"><s:dict><s:key name="app">search</s:key><s:key name="can_change_perms">1</s:key><s:key name="can_list">1</s:key><s:key name="can_share_app">1</s:key><s:key name="can_share_global">0</s:key><s:key name="can_share_user">1</s:key><s:key name="can_write">1</s:key><s:key name="modifiable">1</s:key><s:key name="owner">wade</s:key><s:key name="perms"><s:dict><s:key name="read"><s:list><s:item>wade</s:item></s:list></s:key><s:key name="write"><s:list><s:item>wade</s:item></s:list></s:key></s:dict></s:key><s:key name="removable">0</s:key><s:key name="sharing">system</s:key></s:dict></s:key>
+        <s:key name="isDone">1</s:key>
+        <s:key name="isFinalized">0</s:key>
+        <s:key name="isRealTimeSearch">0</s:key>
+        <s:key name="isSaved">0</s:key>
+        <s:key name="isScheduled">1</s:key>
+        <s:key name="isZombie">0</s:key>
+        <s:key name="ttl">321</s:key>
+      </s:dict>
+    </content>
+  </entry>
+  <entry>
+    <title>scheduler__wade__search__50msclub_at_1349896200_1e5173a9ac1371bc</title>
+    <id>https://localhost:8089/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896200_1e5173a9ac1371bc</id>
+    <updated>2012-10-10T14:10:37-05:00</updated>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896200_1e5173a9ac1371bc" rel="alternate"/>
+    <author>
+      <name>wade</name>
+    </author>
+    <published>2012-10-10T14:10:13-05:00</published>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896200_1e5173a9ac1371bc" rel="list"/>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896200_1e5173a9ac1371bc/_reload" rel="_reload"/>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896200_1e5173a9ac1371bc" rel="edit"/>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349896200_1e5173a9ac1371bc" rel="remove"/>
+    <content type="text/xml">
+      <s:dict>
+        <s:key name="eai:acl"><s:dict><s:key name="app">search</s:key><s:key name="can_change_perms">1</s:key><s:key name="can_list">1</s:key><s:key name="can_share_app">1</s:key><s:key name="can_share_global">0</s:key><s:key name="can_share_user">1</s:key><s:key name="can_write">1</s:key><s:key name="modifiable">1</s:key><s:key name="owner">wade</s:key><s:key name="perms"><s:dict><s:key name="read"><s:list><s:item>wade</s:item></s:list></s:key><s:key name="write"><s:list><s:item>wade</s:item></s:list></s:key></s:dict></s:key><s:key name="removable">0</s:key><s:key name="sharing">system</s:key></s:dict></s:key>
+        <s:key name="isDone">1</s:key>
+        <s:key name="isFinalized">0</s:key>
+        <s:key name="isRealTimeSearch">0</s:key>
+        <s:key name="isSaved">0</s:key>
+        <s:key name="isScheduled">1</s:key>
+        <s:key name="isZombie">0</s:key>
+        <s:key name="ttl">34</s:key>
+      </s:dict>
+    </content>
+  </entry>
+  <entry>
+    <title>scheduler__wade__search__50msclub_at_1349890200_9c17278833a16531</title>
+    <id>https://localhost:8089/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349890200_9c17278833a16531</id>
+    <updated>2012-10-10T12:30:51-05:00</updated>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349890200_9c17278833a16531" rel="alternate"/>
+    <author>
+      <name>wade</name>
+    </author>
+    <published>2012-10-10T12:30:32-05:00</published>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349890200_9c17278833a16531" rel="list"/>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349890200_9c17278833a16531/_reload" rel="_reload"/>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349890200_9c17278833a16531" rel="edit"/>
+    <link href="/servicesNS/nobody/search/search/jobs/scheduler__wade__search__50msclub_at_1349890200_9c17278833a16531" rel="remove"/>
+    <content type="text/xml">
+      <s:dict>
+        <s:key name="eai:acl"><s:dict><s:key name="app">search</s:key><s:key name="can_change_perms">1</s:key><s:key name="can_list">1</s:key><s:key name="can_share_app">1</s:key><s:key name="can_share_global">0</s:key><s:key name="can_share_user">1</s:key><s:key name="can_write">1</s:key><s:key name="modifiable">1</s:key><s:key name="owner">wade</s:key><s:key name="perms"><s:dict><s:key name="read"><s:list><s:item>wade</s:item></s:list></s:key><s:key name="write"><s:list><s:item>wade</s:item></s:list></s:key></s:dict></s:key><s:key name="removable">0</s:key><s:key name="sharing">system</s:key></s:dict></s:key>
+        <s:key name="isDone">1</s:key>
+        <s:key name="isFinalized">0</s:key>
+        <s:key name="isRealTimeSearch">0</s:key>
+        <s:key name="isSaved">0</s:key>
+        <s:key name="isScheduled">1</s:key>
+        <s:key name="isZombie">0</s:key>
+        <s:key name="ttl">79853</s:key>
+      </s:dict>
+    </content>
+  </entry>
+</feed>
